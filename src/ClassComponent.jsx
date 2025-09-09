@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 
 export default class ClassComponent extends Component {
+  constructor() {
+    super();
+    this.state = { count: 0 };
+  }
+  handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+  handleDecrement = () => {
+    if (this.state.count === 0) return;
+    this.setState({ count: this.state.count - 1 });
+  };
   render() {
     return (
       <div className="container">
@@ -12,9 +23,9 @@ export default class ClassComponent extends Component {
             justifyContent: "center",
           }}
         >
-          <button onClick={this.props.handleIncrement}>+</button>
-          <h5>{this.props.count}</h5>
-          <button onClick={this.props.handleDecrement}>-</button>
+          <button onClick={this.handleIncrement}>+</button>
+          <h5>{this.state.count}</h5>
+          <button onClick={this.handleDecrement}>-</button>
         </div>
       </div>
     );
