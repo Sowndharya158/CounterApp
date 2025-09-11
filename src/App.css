@@ -56,4 +56,8 @@ h5 {
     gap: 2rem;
     margin: 2rem auto;
   }
+  .container {
+    width: 250px;
+    height: 200px;
+  }
 }
